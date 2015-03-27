@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF066D441AC09C8E00CE0AB2 /* ConcreteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF066D381AC09C8E00CE0AB2 /* ConcreteKit.framework */; };
 		BF066D551AC09CB300CE0AB2 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */; };
-		BF066D581AC09CC700CE0AB2 /* LocalStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF066D571AC09CC700CE0AB2 /* LocalStorageTest.swift */; };
+		BF066D581AC09CC700CE0AB2 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */; };
 		BF066D591AC09E1300CE0AB2 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */; };
 		BFE37C7D1AC6090400C32886 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE37C7C1AC6090400C32886 /* UIColor.swift */; };
 		BFE37C7E1AC6090400C32886 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE37C7C1AC6090400C32886 /* UIColor.swift */; };
@@ -32,7 +32,7 @@
 		BF066D431AC09C8E00CE0AB2 /* ConcreteKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConcreteKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF066D491AC09C8E00CE0AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
-		BF066D571AC09CC700CE0AB2 /* LocalStorageTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageTest.swift; sourceTree = "<group>"; };
+		BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
 		BFE37C7C1AC6090400C32886 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BFE37C7F1AC6092C00C32886 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +95,7 @@
 		BF066D471AC09C8E00CE0AB2 /* ConcreteKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF066D571AC09CC700CE0AB2 /* LocalStorageTest.swift */,
+				BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */,
 				BFE37C7F1AC6092C00C32886 /* UIColorTests.swift */,
 				BF066D481AC09C8E00CE0AB2 /* Supporting Files */,
 			);
@@ -225,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF066D581AC09CC700CE0AB2 /* LocalStorageTest.swift in Sources */,
+				BF066D581AC09CC700CE0AB2 /* LocalStorageTests.swift in Sources */,
 				BFE37C801AC6092C00C32886 /* UIColorTests.swift in Sources */,
 				BFE37C7E1AC6090400C32886 /* UIColor.swift in Sources */,
 				BF066D591AC09E1300CE0AB2 /* LocalStorage.swift in Sources */,
