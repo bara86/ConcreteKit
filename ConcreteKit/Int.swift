@@ -24,14 +24,14 @@
 
 import Foundation
 
-extension Int {
+public extension Int {
     /// Alias for `days'.
-    var day: NSDateComponents {
+    public var day: NSDateComponents {
         return self.days
     }
 
     /// Returns an NSDateComponents with the `day' component equal to self.
-    var days: NSDateComponents {
+    public var days: NSDateComponents {
         let components = NSDateComponents()
 
         components.day = self
@@ -40,12 +40,12 @@ extension Int {
     }
 
     /// Alias for `months'.
-    var month: NSDateComponents {
+    public var month: NSDateComponents {
         return self.months
     }
 
     /// Returns an NSDateComponents with the `month' component equal to self.
-    var months: NSDateComponents {
+    public var months: NSDateComponents {
         let components = NSDateComponents()
 
         components.month = self
@@ -54,12 +54,12 @@ extension Int {
     }
 
     /// Alias for `years'.
-    var year: NSDateComponents {
+    public var year: NSDateComponents {
         return self.years
     }
 
     /// Returns an NSDateComponents with the `year' component equal to self.
-    var years: NSDateComponents {
+    public var years: NSDateComponents {
         let components = NSDateComponents()
 
         components.year = self
