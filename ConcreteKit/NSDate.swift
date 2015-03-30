@@ -25,7 +25,7 @@
 import Foundation
 
 public extension NSDate {
-    /// Returns an NSDateComponents for this NSDate.
+    /// Returns an NSDateComponents for this NSDate, with UTC locale.
     public var components: NSDateComponents {
         let flags = NSCalendarUnit.YearCalendarUnit
             | NSCalendarUnit.MonthCalendarUnit
@@ -34,7 +34,10 @@ public extension NSDate {
             | NSCalendarUnit.MinuteCalendarUnit
             | NSCalendarUnit.SecondCalendarUnit
 
-        return NSCalendar.currentCalendar().components(flags, fromDate: self)
+        let calendar = NSCalendar.currentCalendar()
+        calendar.timeZone = NSTimeZone(abbreviation: "UTC")!
+
+        return calendar.components(flags, fromDate: self)
     }
 
     /// Returns true if the given NSDate occurs at the same time or after self.

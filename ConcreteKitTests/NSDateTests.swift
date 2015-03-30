@@ -27,15 +27,15 @@ import XCTest
 
 class NSDateExtensionTest: XCTestCase {
     func testComponents() {
-        let date = NSDate(timeIntervalSinceReferenceDate: 91830)
+        let date = NSDate(timeIntervalSince1970: 0)
         let components = date.components
 
-        XCTAssertEqual(2001, components.year, "Year must be 2001")
+        XCTAssertEqual(1970, components.year, "Year must be 1970")
         XCTAssertEqual(1, components.month, "Month must be January")
-        XCTAssertEqual(2, components.day, "Day must be the 2nd")
-        XCTAssertEqual(2, components.hour, "Hour must be midnight")
-        XCTAssertEqual(30, components.minute, "Minute must be zero (midnight)")
-        XCTAssertEqual(30, components.second, "Second must be zero")
+        XCTAssertEqual(1, components.day, "Day must be the 1st")
+        XCTAssertEqual(0, components.hour, "Hour must be midnight")
+        XCTAssertEqual(0, components.minute, "Minute must be zero")
+        XCTAssertEqual(0, components.second, "Second must be zero")
     }
 
     func testAfter() {
