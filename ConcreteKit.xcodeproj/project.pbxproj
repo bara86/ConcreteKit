@@ -14,6 +14,9 @@
 		BF37917C1AC6CA2800EE4EEA /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917B1AC6CA2800EE4EEA /* NSDate.swift */; };
 		BF37917D1AC6CA2800EE4EEA /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917B1AC6CA2800EE4EEA /* NSDate.swift */; };
 		BF37917F1AC6CADA00EE4EEA /* NSDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */; };
+		BFD184071AD1A658006226AE /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD184061AD1A658006226AE /* NSString.swift */; };
+		BFD184091AD1A674006226AE /* NSStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD184081AD1A674006226AE /* NSStringTests.swift */; };
+		BFD1840A1AD1ADD4006226AE /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD184061AD1A658006226AE /* NSString.swift */; };
 		BFE37C7D1AC6090400C32886 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE37C7C1AC6090400C32886 /* UIColor.swift */; };
 		BFE37C7E1AC6090400C32886 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE37C7C1AC6090400C32886 /* UIColor.swift */; };
 		BFE37C801AC6092C00C32886 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE37C7F1AC6092C00C32886 /* UIColorTests.swift */; };
@@ -40,6 +43,8 @@
 		BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
 		BF37917B1AC6CA2800EE4EEA /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateTests.swift; sourceTree = "<group>"; };
+		BFD184061AD1A658006226AE /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
+		BFD184081AD1A674006226AE /* NSStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringTests.swift; sourceTree = "<group>"; };
 		BFE37C7C1AC6090400C32886 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BFE37C7F1AC6092C00C32886 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		BFE37C811AC60DBC00C32886 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 				BFE37C811AC60DBC00C32886 /* Int.swift */,
 				BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */,
 				BF37917B1AC6CA2800EE4EEA /* NSDate.swift */,
+				BFD184061AD1A658006226AE /* NSString.swift */,
 				BFE37C7C1AC6090400C32886 /* UIColor.swift */,
 				BF066D3B1AC09C8E00CE0AB2 /* Supporting Files */,
 			);
@@ -107,6 +113,7 @@
 			children = (
 				BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */,
 				BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */,
+				BFD184081AD1A674006226AE /* NSStringTests.swift */,
 				BFE37C7F1AC6092C00C32886 /* UIColorTests.swift */,
 				BF066D481AC09C8E00CE0AB2 /* Supporting Files */,
 			);
@@ -229,6 +236,7 @@
 			files = (
 				BFE37C821AC60DBC00C32886 /* Int.swift in Sources */,
 				BF066D551AC09CB300CE0AB2 /* LocalStorage.swift in Sources */,
+				BFD184071AD1A658006226AE /* NSString.swift in Sources */,
 				BF37917C1AC6CA2800EE4EEA /* NSDate.swift in Sources */,
 				BFE37C7D1AC6090400C32886 /* UIColor.swift in Sources */,
 			);
@@ -239,8 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF066D581AC09CC700CE0AB2 /* LocalStorageTests.swift in Sources */,
+				BFD184091AD1A674006226AE /* NSStringTests.swift in Sources */,
 				BF37917F1AC6CADA00EE4EEA /* NSDateTests.swift in Sources */,
 				BFE37C801AC6092C00C32886 /* UIColorTests.swift in Sources */,
+				BFD1840A1AD1ADD4006226AE /* NSString.swift in Sources */,
 				BFE37C831AC60DBC00C32886 /* Int.swift in Sources */,
 				BFE37C7E1AC6090400C32886 /* UIColor.swift in Sources */,
 				BF37917D1AC6CA2800EE4EEA /* NSDate.swift in Sources */,
