@@ -27,12 +27,12 @@ import Foundation
 public extension NSDate {
     /// Returns an NSDateComponents for this NSDate, with UTC locale.
     public var components: NSDateComponents {
-        let flags = NSCalendarUnit.YearCalendarUnit
-            | NSCalendarUnit.MonthCalendarUnit
-            | NSCalendarUnit.DayCalendarUnit
-            | NSCalendarUnit.HourCalendarUnit
-            | NSCalendarUnit.MinuteCalendarUnit
-            | NSCalendarUnit.SecondCalendarUnit
+        let flags = NSCalendarUnit.CalendarUnitYear
+            | NSCalendarUnit.CalendarUnitMonth
+            | NSCalendarUnit.CalendarUnitDay
+            | NSCalendarUnit.CalendarUnitHour
+            | NSCalendarUnit.CalendarUnitMinute
+            | NSCalendarUnit.CalendarUnitSecond
 
         let calendar = NSCalendar.currentCalendar()
         calendar.timeZone = NSTimeZone(abbreviation: "UTC")!
@@ -61,7 +61,7 @@ public extension NSDate {
     ///
     /// :param: date The date to compare to.
     public func daysUntil(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.DayCalendarUnit, fromDate: self, toDate: date, options: NSCalendarOptions.allZeros).day
+        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitDay, fromDate: self, toDate: date, options: NSCalendarOptions.allZeros).day
     }
 
     /// Returns a new date by adding the given NSDateComponents. Can be combined with the extension
