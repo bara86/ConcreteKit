@@ -1,3 +1,2 @@
 language: objective-c
-script:
-    - xcodebuild -project ConcreteKit.xcodeproj -scheme ConcreteKit -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" ONLY_ACTIVE_ARCH=NO test
+script: xctool -project ConcreteKit.xcodeproj -scheme ConcreteKit -sdk iphonesimulator test
