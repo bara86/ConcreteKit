@@ -11,6 +11,9 @@
 		BF066D551AC09CB300CE0AB2 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */; };
 		BF066D581AC09CC700CE0AB2 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */; };
 		BF066D591AC09E1300CE0AB2 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */; };
+		BF10D14C1B12FF4800ED5247 /* BuildType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10D14B1B12FF4800ED5247 /* BuildType.swift */; };
+		BF10D14D1B12FF4800ED5247 /* BuildType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10D14B1B12FF4800ED5247 /* BuildType.swift */; };
+		BF10D1501B12FF6800ED5247 /* BuildTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10D14E1B12FF6800ED5247 /* BuildTypeTests.swift */; };
 		BF37917C1AC6CA2800EE4EEA /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917B1AC6CA2800EE4EEA /* NSDate.swift */; };
 		BF37917D1AC6CA2800EE4EEA /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917B1AC6CA2800EE4EEA /* NSDate.swift */; };
 		BF37917F1AC6CADA00EE4EEA /* NSDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */; };
@@ -55,6 +58,8 @@
 		BF066D491AC09C8E00CE0AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
+		BF10D14B1B12FF4800ED5247 /* BuildType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildType.swift; sourceTree = "<group>"; };
+		BF10D14E1B12FF6800ED5247 /* BuildTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildTypeTests.swift; sourceTree = "<group>"; };
 		BF37917B1AC6CA2800EE4EEA /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateTests.swift; sourceTree = "<group>"; };
 		BFD184061AD1A658006226AE /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 		BF066D3A1AC09C8E00CE0AB2 /* ConcreteKit */ = {
 			isa = PBXGroup;
 			children = (
+				BF10D14B1B12FF4800ED5247 /* BuildType.swift */,
 				BFE37C811AC60DBC00C32886 /* Int.swift */,
 				BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */,
 				BF37917B1AC6CA2800EE4EEA /* NSDate.swift */,
@@ -125,6 +131,7 @@
 		BF066D471AC09C8E00CE0AB2 /* ConcreteKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				BF10D14E1B12FF6800ED5247 /* BuildTypeTests.swift */,
 				BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */,
 				BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */,
 				BFD184081AD1A674006226AE /* NSStringTests.swift */,
@@ -251,6 +258,7 @@
 			files = (
 				BFE37C821AC60DBC00C32886 /* Int.swift in Sources */,
 				BF066D551AC09CB300CE0AB2 /* LocalStorage.swift in Sources */,
+				BF10D14C1B12FF4800ED5247 /* BuildType.swift in Sources */,
 				BFD184071AD1A658006226AE /* NSString.swift in Sources */,
 				BF37917C1AC6CA2800EE4EEA /* NSDate.swift in Sources */,
 				BFE37C7D1AC6090400C32886 /* UIColor.swift in Sources */,
@@ -261,7 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF10D14D1B12FF4800ED5247 /* BuildType.swift in Sources */,
 				BF066D581AC09CC700CE0AB2 /* LocalStorageTests.swift in Sources */,
+				BF10D1501B12FF6800ED5247 /* BuildTypeTests.swift in Sources */,
 				BFD184091AD1A674006226AE /* NSStringTests.swift in Sources */,
 				BF37917F1AC6CADA00EE4EEA /* NSDateTests.swift in Sources */,
 				BFE37C801AC6092C00C32886 /* UIColorTests.swift in Sources */,
@@ -319,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -359,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
