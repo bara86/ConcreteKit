@@ -41,46 +41,73 @@ public extension String {
     /// `distanceTo' but the result is returned as a normalized value between 0.0 and 1.0.
     /// 
     /// :param: other The string we are calculating the distance to.
-    public func likenessTo(other: String) -> Float {
-        return 1.0 - (Float(self.distanceTo(other)) / Float(max(self.length, other.length)))
+    /// :param: minLikeness The minimum acceptable likeness, in a range between 0.0 and 1.0.
+    ///         Values outside the range are interpreted as 0.0.
+    public func likenessTo(other: String, minLikeness: Float = 0.0) -> Float {
+        let countSelf = count(self)
+        let countOther = count(other)
+        let countMax = Float(max(countSelf, countOther))
+        let distance: Int
+
+        if minLikeness <= 0.0 || minLikeness > 1.0 {
+            // Fast path
+            distance = self.distanceTo(other)
+        } else {
+            distance = self.distanceTo(other, maxDistance: Int(countMax * (1.0 - minLikeness)))
+        }
+
+        return 1.0 - Float(distance) / countMax
     }
 
-    /// Calculates the Levenshtein distance to another string, assuming that both strings are
-    /// encoded with UTF-8.
+    /// Calculates the Levenshtein distance to another string.
     ///
     /// :param: other The string we are calculating the distance to.
-    public func distanceTo(other: String) -> Int {
-        if self == other {
-            return 0
+    /// :param: maxDistance The maximum acceptable distance. Zero means no limit.
+    ///
+    /// :returns: The edit distance between strings. If ``maxDistance`` is not zero the returned
+    ///           value is eventually clamped to the value of ``maxDistance``.
+    public func distanceTo(other: String, maxDistance: Int = 0) -> Int {
+        // Minor optimization, let's avoid calling count() too many times.
+        let countSelf = count(self)
+        let countOther = count(other)
+
+        // If either string is of length zero, the distance is the length of the other string.
+        if countSelf == 0 {
+            return countOther
+        } else if countOther == 0 {
+            return countSelf
         }
 
-        if self.length == 0 {
-            return other.length
+        // The starting distance is the difference in length between the two strings.
+        var distance = abs(self.length - other.length)
+
+        // Stop early if we already reached the maximum acceptable distance.
+        if maxDistance > 0 && distance >= maxDistance {
+            return distance
         }
 
-        if other.length == 0 {
-            return self.length
-        }
+        // Save the starting position so that we can increment it later without using advance()
+        // which is O(N) for Strings.
+        var posSelf = self.startIndex
+        var posOther = other.startIndex
 
-        var work0 = [Int](count: other.length + 1, repeatedValue: 0)
-        var work1 = [Int](count: other.length + 1, repeatedValue: 0)
-
-        for var i = 0; i < work0.count; i++ {
-            work0[i] = i
-        }
-
-        for var i = 0; i < self.length; i++ {
-            work1[0] = i + 1;
-
-            for var j = 0; j < other.length; j++ {
-                let cost = self[i] == other[j] ? 0 : 1
-
-                work1[j + 1] = min(work1[j] + 1, work0[j + 1] + 1, work0[j] + cost)
+        // Iterate only over the character set common to both substrings, since all subsequent
+        // characters are automatically different and count as edit distance.
+        for i in 0...min(countSelf, countOther) - 1 {
+            if self[posSelf] != other[posOther] {
+                distance++
             }
 
-            work0 = work1
+            // Early termination in case we reach the maximum acceptable distance.
+            if maxDistance > 0 && distance >= maxDistance {
+                return distance
+            }
+
+            // Advance to the next character.
+            posSelf = posSelf.successor()
+            posOther = posOther.successor()
         }
-        
-        return work1[other.length]
+
+        return distance
     }
 }

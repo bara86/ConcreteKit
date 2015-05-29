@@ -47,4 +47,20 @@ class NSStringTests: XCTestCase {
     func testLevenshteinLikeness() {
         XCTAssertEqual(Float(0.75), "bite".likenessTo("kite"), "Must have a likeness of 75%")
     }
+
+    func testLevenshteinPerformance() {
+        self.measureBlock {
+            for _ in 0...1000 {
+                "Performance Testing in Xcode 6".likenessTo("xcode")
+            }
+        }
+    }
+
+    func testLevenshteinPerformanceMinLikeness() {
+        self.measureBlock {
+            for _ in 0...1000 {
+                "Performance Testing in Xcode 6".likenessTo("xcode", minLikeness: 0.9)
+            }
+        }
+    }
 }
