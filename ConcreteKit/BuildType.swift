@@ -63,8 +63,6 @@ public func buildType() -> BuildType {
     }
 
     if let receipt = NSBundle.mainBundle().appStoreReceiptURL {
-        NSLog("Receipt URL: \(receipt)")
-
         let name = receipt.lastPathComponent
 
         if name == "sandboxReceipt" {
