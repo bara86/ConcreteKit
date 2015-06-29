@@ -45,7 +45,7 @@ public struct LocalStorageManager {
     // MARK: Subscript Notation
 
     /// Subscript notation to set/get a boolean value.
-    subscript(defaultName: String) -> Bool {
+    public subscript(defaultName: String) -> Bool {
         get {
             return defaults.boolForKey(defaultName)
         }
@@ -55,7 +55,7 @@ public struct LocalStorageManager {
     }
 
     /// Subscript notation to set/get a double precision floating point value.
-    subscript(defaultName: String) -> Double {
+    public subscript(defaultName: String) -> Double {
         get {
             return defaults.doubleForKey(defaultName)
         }
@@ -65,7 +65,7 @@ public struct LocalStorageManager {
     }
 
     /// Subscript notation to set/get a floating point value.
-    subscript(defaultName: String) -> Float {
+    public subscript(defaultName: String) -> Float {
         get {
             return defaults.floatForKey(defaultName)
         }
@@ -75,7 +75,7 @@ public struct LocalStorageManager {
     }
 
     /// Subscript notation to set/get an integer value.
-    subscript(defaultName: String) -> Int {
+    public subscript(defaultName: String) -> Int {
         get {
             return defaults.integerForKey(defaultName)
         }
@@ -85,7 +85,7 @@ public struct LocalStorageManager {
     }
 
     /// Subscript notation to set/get a string value.
-    subscript(defaultName: String) -> String {
+    public subscript(defaultName: String) -> String {
         get {
             if let ret = defaults.stringForKey(defaultName) {
                 return ret
