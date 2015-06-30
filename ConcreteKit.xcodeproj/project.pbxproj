@@ -21,9 +21,9 @@
 		BF8124201B18520D0024DA22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF81241F1B18520D0024DA22 /* Foundation.framework */; };
 		BF8124221B1852140024DA22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8124211B1852140024DA22 /* UIKit.framework */; };
 		BF8124241B1852330024DA22 /* KeyboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8124231B1852330024DA22 /* KeyboardUtils.swift */; };
-		BFD184071AD1A658006226AE /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD184061AD1A658006226AE /* NSString.swift */; };
-		BFD184091AD1A674006226AE /* NSStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD184081AD1A674006226AE /* NSStringTests.swift */; };
-		BFD1840A1AD1ADD4006226AE /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD184061AD1A658006226AE /* NSString.swift */; };
+		BFD184071AD1A658006226AE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD184061AD1A658006226AE /* String.swift */; };
+		BFD184091AD1A674006226AE /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD184081AD1A674006226AE /* StringTests.swift */; };
+		BFD1840A1AD1ADD4006226AE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD184061AD1A658006226AE /* String.swift */; };
 		BFE37C7D1AC6090400C32886 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE37C7C1AC6090400C32886 /* UIColor.swift */; };
 		BFE37C7E1AC6090400C32886 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE37C7C1AC6090400C32886 /* UIColor.swift */; };
 		BFE37C801AC6092C00C32886 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE37C7F1AC6092C00C32886 /* UIColorTests.swift */; };
@@ -68,8 +68,8 @@
 		BF81241F1B18520D0024DA22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF8124211B1852140024DA22 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BF8124231B1852330024DA22 /* KeyboardUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardUtils.swift; sourceTree = "<group>"; };
-		BFD184061AD1A658006226AE /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
-		BFD184081AD1A674006226AE /* NSStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringTests.swift; sourceTree = "<group>"; };
+		BFD184061AD1A658006226AE /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		BFD184081AD1A674006226AE /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		BFE37C7C1AC6090400C32886 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BFE37C7F1AC6092C00C32886 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		BFE37C811AC60DBC00C32886 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 				BF8124231B1852330024DA22 /* KeyboardUtils.swift */,
 				BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */,
 				BF37917B1AC6CA2800EE4EEA /* NSDate.swift */,
-				BFD184061AD1A658006226AE /* NSString.swift */,
+				BFD184061AD1A658006226AE /* String.swift */,
 				BFE37C7C1AC6090400C32886 /* UIColor.swift */,
 				BF066D3B1AC09C8E00CE0AB2 /* Supporting Files */,
 			);
@@ -145,7 +145,7 @@
 				BF10D14E1B12FF6800ED5247 /* BuildTypeTests.swift */,
 				BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */,
 				BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */,
-				BFD184081AD1A674006226AE /* NSStringTests.swift */,
+				BFD184081AD1A674006226AE /* StringTests.swift */,
 				BFE37C7F1AC6092C00C32886 /* UIColorTests.swift */,
 				BF066D481AC09C8E00CE0AB2 /* Supporting Files */,
 			);
@@ -271,7 +271,7 @@
 				BF8124241B1852330024DA22 /* KeyboardUtils.swift in Sources */,
 				BF066D551AC09CB300CE0AB2 /* LocalStorage.swift in Sources */,
 				BF10D14C1B12FF4800ED5247 /* BuildType.swift in Sources */,
-				BFD184071AD1A658006226AE /* NSString.swift in Sources */,
+				BFD184071AD1A658006226AE /* String.swift in Sources */,
 				BF37917C1AC6CA2800EE4EEA /* NSDate.swift in Sources */,
 				BFE37C7D1AC6090400C32886 /* UIColor.swift in Sources */,
 			);
@@ -284,10 +284,10 @@
 				BF10D14D1B12FF4800ED5247 /* BuildType.swift in Sources */,
 				BF066D581AC09CC700CE0AB2 /* LocalStorageTests.swift in Sources */,
 				BF10D1501B12FF6800ED5247 /* BuildTypeTests.swift in Sources */,
-				BFD184091AD1A674006226AE /* NSStringTests.swift in Sources */,
+				BFD184091AD1A674006226AE /* StringTests.swift in Sources */,
 				BF37917F1AC6CADA00EE4EEA /* NSDateTests.swift in Sources */,
 				BFE37C801AC6092C00C32886 /* UIColorTests.swift in Sources */,
-				BFD1840A1AD1ADD4006226AE /* NSString.swift in Sources */,
+				BFD1840A1AD1ADD4006226AE /* String.swift in Sources */,
 				BFE37C831AC60DBC00C32886 /* Int.swift in Sources */,
 				BFE37C7E1AC6090400C32886 /* UIColor.swift in Sources */,
 				BF37917D1AC6CA2800EE4EEA /* NSDate.swift in Sources */,
