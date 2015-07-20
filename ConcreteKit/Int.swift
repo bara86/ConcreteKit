@@ -25,6 +25,48 @@
 import Foundation
 
 public extension Int {
+    /// Alias for `seconds'.
+    public var second: NSDateComponents {
+        return self.seconds
+    }
+
+    /// Returns an NSDateComponents with the `second' component equal to self.
+    public var seconds: NSDateComponents {
+        let components = NSDateComponents()
+
+        components.second = self
+
+        return components
+    }
+
+    /// Alias for `minutes'.
+    public var minute: NSDateComponents {
+        return self.minutes
+    }
+
+    /// Returns an NSDateComponents with the `minute' component equal to self.
+    public var minutes: NSDateComponents {
+        let components = NSDateComponents()
+
+        components.minute = self
+
+        return components
+    }
+
+    /// Alias for `hours'.
+    public var hour: NSDateComponents {
+        return self.hours
+    }
+
+    /// Returns an NSDateComponents with the `hour' component equal to self.
+    public var hours: NSDateComponents {
+        let components = NSDateComponents()
+
+        components.hour = self
+
+        return components
+    }
+
     /// Alias for `days'.
     public var day: NSDateComponents {
         return self.days
