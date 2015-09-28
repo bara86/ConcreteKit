@@ -27,7 +27,7 @@ import Foundation
 public extension String {
     /// Subscript notation to address a single character in the string.
     subscript (i: Int) -> Character {
-        return self[advance(self.startIndex, i)]
+        return self[self.startIndex.advancedBy(i)]
     }
 
     /// The length of this string, assuming it is encoded as UTF-8.
@@ -40,12 +40,12 @@ public extension String {
     /// Calculates the Levenshtein distance to another string. The semantic is the same as
     /// `distanceTo' but the result is returned as a normalized value between 0.0 and 1.0.
     /// 
-    /// :param: other The string we are calculating the distance to.
-    /// :param: minLikeness The minimum acceptable likeness, in a range between 0.0 and 1.0.
+    /// - parameter other: The string we are calculating the distance to.
+    /// - parameter minLikeness: The minimum acceptable likeness, in a range between 0.0 and 1.0.
     ///         Values outside the range are interpreted as 0.0.
     public func likenessTo(other: String, minLikeness: Float = 0.0) -> Float {
-        let countSelf = count(self)
-        let countOther = count(other)
+        let countSelf = self.characters.count
+        let countOther = other.characters.count
         let countMax = Float(max(countSelf, countOther))
         let distance: Int
 
@@ -61,15 +61,15 @@ public extension String {
 
     /// Calculates the Levenshtein distance to another string.
     ///
-    /// :param: other The string we are calculating the distance to.
-    /// :param: maxDistance The maximum acceptable distance. Zero means no limit.
+    /// - parameter other: The string we are calculating the distance to.
+    /// - parameter maxDistance: The maximum acceptable distance. Zero means no limit.
     ///
-    /// :returns: The edit distance between strings. If ``maxDistance`` is not zero the returned
+    /// - returns: The edit distance between strings. If ``maxDistance`` is not zero the returned
     ///           value is eventually clamped to the value of ``maxDistance``.
     public func distanceTo(other: String, maxDistance: Int = 0) -> Int {
         // Minor optimization, let's avoid calling count() too many times.
-        let countSelf = count(self)
-        let countOther = count(other)
+        let countSelf = self.characters.count
+        let countOther = other.characters.count
 
         // If either string is of length zero, the distance is the length of the other string.
         if countSelf == 0 {
@@ -93,7 +93,7 @@ public extension String {
 
         // Iterate only over the character set common to both substrings, since all subsequent
         // characters are automatically different and count as edit distance.
-        for i in 0...min(countSelf, countOther) - 1 {
+        for _ in 0...min(countSelf, countOther) - 1 {
             if self[posSelf] != other[posOther] {
                 distance++
             }

@@ -37,7 +37,7 @@ public struct LocalStorageManager {
     /// Creates a new instance of a LocalStorageManager using the given NSUserDefaults as
     /// persistent storage.
     ///
-    /// :param: defaults The NSUserDefaults instance to use as backing store.
+    /// - parameter defaults: The NSUserDefaults instance to use as backing store.
     public init(defaults: NSUserDefaults) {
         self.defaults = defaults
     }
@@ -109,8 +109,8 @@ public struct LocalStorageManager {
     /// application (since the value is persisted to disk) or until the sentinel value is reset to
     /// false.
     ///
-    /// :param: sentinel The key to use as sentinel value.
-    /// :param: f The function to call.
+    /// - parameter sentinel: The key to use as sentinel value.
+    /// - parameter f: The function to call.
     public func once(sentinel: String, f: () -> ()) {
         if !self[sentinel] {
             f()

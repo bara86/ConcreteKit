@@ -28,7 +28,7 @@ import Foundation
 internal let IsIPhoneSimulator = TARGET_IPHONE_SIMULATOR != 0
 
 /// Kinds of builds we can detect.
-public enum BuildType: Printable {
+public enum BuildType: CustomStringConvertible {
     case AppStore
     case Simulator
     case TestFlightBeta
@@ -50,7 +50,7 @@ public enum BuildType: Printable {
 
 /// Determines where the application is running.
 ///
-/// :returns: - ``BuildType.AppStore`` if the app is being distributed through the AppStore.
+/// - returns: - ``BuildType.AppStore`` if the app is being distributed through the AppStore.
 ///           - ``BuildType.Simulator`` if running in the iPhone Simulator.
 ///           - ``BuildType.TestFlightBeta`` if the app is being distributed through TestFlight Beta.
 ///           - ``BuildType.Unknown`` in all other cases.

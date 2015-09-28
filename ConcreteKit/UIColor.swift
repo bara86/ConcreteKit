@@ -27,8 +27,8 @@ import UIKit
 public extension UIColor {
     /// A convenience constructor to create a color from its hexadecimal representation.
     ///
-    /// :param: hex The color.
-    /// :param: alpha The alpha value.
+    /// - parameter hex: The color.
+    /// - parameter alpha: The alpha value.
     public convenience init(hex: UInt32, alpha: CGFloat = 1.0) {
         let r = CGFloat((hex & 0xFF0000) >> 16) / 255.0
         let g = CGFloat((hex & 0x00FF00) >> 08) / 255.0

@@ -27,7 +27,7 @@ import XCTest
 
 class TimerTests: XCTestCase {
     func testTimerAfter() {
-        var expectation = expectationWithDescription("Timer fires after one second")
+        let expectation = expectationWithDescription("Timer fires after one second")
 
         Timer.after(1.second, f: {
             expectation.fulfill()
