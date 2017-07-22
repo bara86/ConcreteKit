@@ -29,20 +29,20 @@ internal let IsIPhoneSimulator = TARGET_IPHONE_SIMULATOR != 0
 
 /// Kinds of builds we can detect.
 public enum BuildType: CustomStringConvertible {
-    case AppStore
-    case Simulator
-    case TestFlightBeta
-    case Unknown
+    case appStore
+    case simulator
+    case testFlightBeta
+    case unknown
 
     public var description: String {
         switch(self) {
-        case .AppStore:
+        case .appStore:
             return "AppStore"
-        case .Simulator:
+        case .simulator:
             return "Simulator"
-        case .TestFlightBeta:
+        case .testFlightBeta:
             return "TestFlightBeta"
-        case .Unknown:
+        case .unknown:
             return "Unknown"
         }
     }
@@ -59,18 +59,18 @@ public enum BuildType: CustomStringConvertible {
 /// is returned.
 public func buildType() -> BuildType {
     if IsIPhoneSimulator {
-        return .Simulator
+        return .simulator
     }
 
-    if let receipt = NSBundle.mainBundle().appStoreReceiptURL {
+    if let receipt = Bundle.main.appStoreReceiptURL {
         let name = receipt.lastPathComponent
 
         if name == "sandboxReceipt" {
-            return .TestFlightBeta
+            return .testFlightBeta
         } else if name == "receipt" {
-            return .AppStore
+            return .appStore
         }
     }
 
-    return .Unknown
+    return .unknown
 }

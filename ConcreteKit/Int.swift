@@ -26,13 +26,13 @@ import Foundation
 
 public extension Int {
     /// Alias for `seconds'.
-    public var second: NSDateComponents {
+    public var second: DateComponents {
         return self.seconds
     }
 
     /// Returns an NSDateComponents with the `second' component equal to self.
-    public var seconds: NSDateComponents {
-        let components = NSDateComponents()
+    public var seconds: DateComponents {
+        var components = DateComponents()
 
         components.second = self
 
@@ -40,13 +40,13 @@ public extension Int {
     }
 
     /// Alias for `minutes'.
-    public var minute: NSDateComponents {
+    public var minute: DateComponents {
         return self.minutes
     }
 
     /// Returns an NSDateComponents with the `minute' component equal to self.
-    public var minutes: NSDateComponents {
-        let components = NSDateComponents()
+    public var minutes: DateComponents {
+        var components = DateComponents()
 
         components.minute = self
 
@@ -54,13 +54,13 @@ public extension Int {
     }
 
     /// Alias for `hours'.
-    public var hour: NSDateComponents {
+    public var hour: DateComponents {
         return self.hours
     }
 
     /// Returns an NSDateComponents with the `hour' component equal to self.
-    public var hours: NSDateComponents {
-        let components = NSDateComponents()
+    public var hours: DateComponents {
+        var components = DateComponents()
 
         components.hour = self
 
@@ -68,13 +68,13 @@ public extension Int {
     }
 
     /// Alias for `days'.
-    public var day: NSDateComponents {
+    public var day: DateComponents {
         return self.days
     }
 
     /// Returns an NSDateComponents with the `day' component equal to self.
-    public var days: NSDateComponents {
-        let components = NSDateComponents()
+    public var days: DateComponents {
+        var components = DateComponents()
 
         components.day = self
 
@@ -82,13 +82,13 @@ public extension Int {
     }
 
     /// Alias for `months'.
-    public var month: NSDateComponents {
+    public var month: DateComponents {
         return self.months
     }
 
     /// Returns an NSDateComponents with the `month' component equal to self.
-    public var months: NSDateComponents {
-        let components = NSDateComponents()
+    public var months: DateComponents {
+        var components = DateComponents()
 
         components.month = self
 
@@ -96,13 +96,13 @@ public extension Int {
     }
 
     /// Alias for `years'.
-    public var year: NSDateComponents {
+    public var year: DateComponents {
         return self.years
     }
 
     /// Returns an NSDateComponents with the `year' component equal to self.
-    public var years: NSDateComponents {
-        let components = NSDateComponents()
+    public var years: DateComponents {
+        var components = DateComponents()
 
         components.year = self
 

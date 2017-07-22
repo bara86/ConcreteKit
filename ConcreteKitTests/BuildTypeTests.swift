@@ -29,6 +29,6 @@ class BuildTypeTest: XCTestCase {
     func testBuildTypeSimulator() {
         // Logic tests cannot run in a device, test at least that the simulator is being correctly
         // identified.
-        XCTAssertTrue(buildType() == .Simulator, "buildType() must return .Simulator for iOS Simulator builds")
+        XCTAssertTrue(buildType() == .simulator, "buildType() must return .Simulator for iOS Simulator builds")
     }
 }

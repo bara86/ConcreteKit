@@ -31,25 +31,25 @@ import UIKit
 /// appears/disappears and automatically resizes the given ``UIScrollView``. It is sufficient to
 /// create an instance within an ``UIViewController`` so that an instance of this class lives as
 /// long as the controller itself.
-public class KeyboardAvoidingManager {
-    private var scrollView: UIScrollView!
+open class KeyboardAvoidingManager {
+    fileprivate var scrollView: UIScrollView!
 
     public init(scrollView: UIScrollView) {
         self.scrollView = scrollView
 
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: "keyboardWasShown:", name: "UIKeyboardDidShowNotification", object: nil)
-        notificationCenter.addObserver(self, selector: "keyboardWillBeHidden:", name: "UIKeyboardWillHideNotification", object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(KeyboardAvoidingManager.keyboardWasShown(_:)), name: NSNotification.Name(rawValue: "UIKeyboardDidShowNotification"), object: nil)
+        notificationCenter.addObserver(self, selector: #selector(KeyboardAvoidingManager.keyboardWillBeHidden(_:)), name: NSNotification.Name(rawValue: "UIKeyboardWillHideNotification"), object: nil)
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     @objc
-    private func keyboardWasShown(notification: NSNotification) {
+    fileprivate func keyboardWasShown(_ notification: Notification) {
         let userInfo = notification.userInfo as! [String : AnyObject]
-        let size = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue().size
+        let size = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
         let contentInsets = UIEdgeInsetsMake(0, 0, size.height, 0)
 
         scrollView.contentInset = contentInsets
@@ -57,8 +57,8 @@ public class KeyboardAvoidingManager {
     }
 
     @objc
-    private func keyboardWillBeHidden(notification: NSNotification) {
-        scrollView.contentInset = UIEdgeInsetsZero
-        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+    fileprivate func keyboardWillBeHidden(_ notification: Notification) {
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 }

@@ -27,13 +27,13 @@ import Foundation
 public extension String {
     /// Subscript notation to address a single character in the string.
     subscript (i: Int) -> Character {
-        return self[self.startIndex.advancedBy(i)]
+        return self[self.characters.index(self.startIndex, offsetBy: i)]
     }
 
     /// The length of this string, assuming it is encoded as UTF-8.
     public var length: Int {
         get {
-            return self.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+            return self.lengthOfBytes(using: String.Encoding.utf8)
         }
     }
 
@@ -43,7 +43,7 @@ public extension String {
     /// - parameter other: The string we are calculating the distance to.
     /// - parameter minLikeness: The minimum acceptable likeness, in a range between 0.0 and 1.0.
     ///         Values outside the range are interpreted as 0.0.
-    public func likenessTo(other: String, minLikeness: Float = 0.0) -> Float {
+    public func likenessTo(_ other: String, minLikeness: Float = 0.0) -> Float {
         let countSelf = self.characters.count
         let countOther = other.characters.count
         let countMax = Float(max(countSelf, countOther))
@@ -66,7 +66,7 @@ public extension String {
     ///
     /// - returns: The edit distance between strings. If ``maxDistance`` is not zero the returned
     ///           value is eventually clamped to the value of ``maxDistance``.
-    public func distanceTo(other: String, maxDistance: Int = 0) -> Int {
+    public func distanceTo(_ other: String, maxDistance: Int = 0) -> Int {
         // Minor optimization, let's avoid calling count() too many times.
         let countSelf = self.characters.count
         let countOther = other.characters.count
@@ -95,7 +95,7 @@ public extension String {
         // characters are automatically different and count as edit distance.
         for _ in 0...min(countSelf, countOther) - 1 {
             if self[posSelf] != other[posOther] {
-                distance++
+                distance += 1
             }
 
             // Early termination in case we reach the maximum acceptable distance.
@@ -104,8 +104,8 @@ public extension String {
             }
 
             // Advance to the next character.
-            posSelf = posSelf.successor()
-            posOther = posOther.successor()
+            posSelf = self.index(after: posSelf)
+            posOther = other.index(after: posOther)
         }
 
         return distance

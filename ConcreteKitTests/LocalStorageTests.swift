@@ -27,13 +27,13 @@ import XCTest
 
 class LocalStorageTest: XCTestCase {
     override func setUp() {
-        let defaults = NSUserDefaults()
+        let defaults = UserDefaults()
 
-        defaults.setBool(true, forKey: "test.bool")
-        defaults.setDouble(123.0, forKey: "test.double")
-        defaults.setFloat(3.14, forKey: "test.float")
-        defaults.setInteger(123, forKey: "test.int")
-        defaults.setObject("a string", forKey: "test.string")
+        defaults.set(true, forKey: "test.bool")
+        defaults.set(123.0, forKey: "test.double")
+        defaults.set(3.14, forKey: "test.float")
+        defaults.set(123, forKey: "test.int")
+        defaults.set("a string", forKey: "test.string")
         defaults.synchronize()
     }
 
@@ -84,7 +84,7 @@ class LocalStorageTest: XCTestCase {
         // The sentinel value is set to false, thus the function must be called at most once.
         LocalStorage[sentinelKey] = false
 
-        for var i = 0; i < 10; i++ {
+        for _ in 0 ..< 10 {
             LocalStorage.once(sentinelKey) {
                 callCount += 1
             }

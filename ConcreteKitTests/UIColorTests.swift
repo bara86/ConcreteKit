@@ -27,14 +27,14 @@ import XCTest
 
 class UIColorTests: XCTestCase {
     func testOpaqueColors() {
-        XCTAssertEqual(UIColor.redColor(), UIColor(hex: 0xFF0000), "The color is red")
-        XCTAssertEqual(UIColor.greenColor(), UIColor(hex: 0x00FF00), "The color is green")
-        XCTAssertEqual(UIColor.blueColor(), UIColor(hex: 0x0000FF), "The color is blue")
+        XCTAssertEqual(UIColor.red, UIColor(hex: 0xFF0000), "The color is red")
+        XCTAssertEqual(UIColor.green, UIColor(hex: 0x00FF00), "The color is green")
+        XCTAssertEqual(UIColor.blue, UIColor(hex: 0x0000FF), "The color is blue")
 
-        XCTAssertNotEqual(UIColor.blueColor(), UIColor(hex: 0x0000FF, alpha: 0.3))
+        XCTAssertNotEqual(UIColor.blue, UIColor(hex: 0x0000FF, alpha: 0.3))
     }
 
     func testTransparentColors() {
-        XCTAssertEqual(UIColor.blueColor().colorWithAlphaComponent(0.3), UIColor(hex: 0x0000FF, alpha: 0.3), "The color is partially transparent blue")
+        XCTAssertEqual(UIColor.blue.withAlphaComponent(0.3), UIColor(hex: 0x0000FF, alpha: 0.3), "The color is partially transparent blue")
     }
 }

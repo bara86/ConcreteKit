@@ -24,39 +24,39 @@
 
 import Foundation
 
-public extension NSDate {
+public extension Date {
     /// Returns an NSDateComponents for this NSDate, with UTC locale.
-    public var components: NSDateComponents {
-        let flags: NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second]
+    public var components: DateComponents {
+        let flags: NSCalendar.Unit = [NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day, NSCalendar.Unit.hour, NSCalendar.Unit.minute, NSCalendar.Unit.second]
 
-        let calendar = NSCalendar.currentCalendar()
-        calendar.timeZone = NSTimeZone(abbreviation: "UTC")!
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(abbreviation: "UTC")!
 
-        return calendar.components(flags, fromDate: self)
+        return (calendar as NSCalendar).components(flags, from: self)
     }
 
     /// Returns true if the given NSDate occurs at the same time or after self.
     ///
     /// - parameter date: The date to compare.
-    public func after(date date: NSDate) -> Bool {
+    public func after(date: Date) -> Bool {
         let comparisonResult = self.compare(date)
 
-        return comparisonResult == NSComparisonResult.OrderedSame
-            || comparisonResult == NSComparisonResult.OrderedDescending
+        return comparisonResult == ComparisonResult.orderedSame
+            || comparisonResult == ComparisonResult.orderedDescending
     }
 
     /// Returns true if the given NSDate occurs before self, false otherwise.
     ///
     /// - parameter date: The date to compare to.
-    public func before(date date: NSDate) -> Bool {
-        return self.compare(date) == NSComparisonResult.OrderedAscending
+    public func before(date: Date) -> Bool {
+        return self.compare(date) == ComparisonResult.orderedAscending
     }
 
     /// Returns the number of days until the given NSDate. Can be negative.
     ///
     /// - parameter date: The date to compare to.
-    public func daysUntil(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.Day, fromDate: self, toDate: date, options: NSCalendarOptions()).day
+    public func daysUntil(_ date: Date) -> Int {
+        return (Calendar.current as NSCalendar).components(NSCalendar.Unit.day, from: self, to: date, options: NSCalendar.Options()).day!
     }
 
     /// Returns a new date by adding the given NSDateComponents. Can be combined with the extension
@@ -65,9 +65,9 @@ public extension NSDate {
     ///     let future = NSDate().extended(by: 3.days)
     ///
     /// - parameter by: The NSDateComponents to add to self.
-    public func extended(by date: NSDateComponents) -> NSDate {
-        let calendar = NSCalendar.currentCalendar()
+    public func extended(by date: DateComponents) -> Date {
+        let calendar = Calendar.current
 
-        return calendar.dateByAddingComponents(date, toDate: self, options: NSCalendarOptions())!
+        return (calendar as NSCalendar).date(byAdding: date, to: self, options: NSCalendar.Options())!
     }
 }

@@ -30,22 +30,22 @@ public typealias Callable = () -> ()
 public struct Timer {
     /// Schedules the execution of the given function after the given time interval (in seconds)
     /// has elapsed.
-    public static func after(ti: NSTimeInterval, f: Callable) {
+    public static func after(_ ti: TimeInterval, f: @escaping Callable) {
         let actor = TimerActor(callable: f)
 
-        NSTimer.scheduledTimerWithTimeInterval(ti, target: actor, selector: "timerFired:", userInfo: nil, repeats: false)
+        Foundation.Timer.scheduledTimer(timeInterval: ti, target: actor, selector: #selector(TimerActor.timerFired(_:)), userInfo: nil, repeats: false)
     }
 }
 
 private class TimerActor {
     var f: Callable
 
-    init(callable: Callable) {
+    init(callable: @escaping Callable) {
         self.f = callable
     }
 
     @objc
-    func timerFired(_: NSTimer) {
+    func timerFired(_: Foundation.Timer) {
         f()
     }
 }

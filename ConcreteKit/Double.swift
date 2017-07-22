@@ -26,32 +26,32 @@ import Foundation
 
 public extension Double {
     /// Alias for `seconds`.
-    public var second: NSTimeInterval {
+    public var second: TimeInterval {
         return self.seconds
     }
 
     /// Returns an `NSTimeInterval` equal to the given amount of seconds.
-    public var seconds: NSTimeInterval {
+    public var seconds: TimeInterval {
         return self
     }
 
     /// Alias for `minutes`.
-    public var minute: NSTimeInterval {
+    public var minute: TimeInterval {
         return self.minutes
     }
 
     /// Returns an `NSTimeInterval` equal to the given amount of minutes.
-    public var minutes: NSTimeInterval {
+    public var minutes: TimeInterval {
         return self * 60
     }
 
     /// Alias for `hours`.
-    public var hour: NSTimeInterval {
+    public var hour: TimeInterval {
         return self.hours
     }
 
     /// Returns an `NSTimeInterval` equal to the given amount of hours.
-    public var hours: NSTimeInterval {
+    public var hours: TimeInterval {
         return self * 3600
     }
 }

@@ -27,7 +27,7 @@ import XCTest
 
 class NSDateExtensionTest: XCTestCase {
     func testComponents() {
-        let date = NSDate(timeIntervalSince1970: 0)
+        let date = Date(timeIntervalSince1970: 0)
         let components = date.components
 
         XCTAssertEqual(1970, components.year, "Year must be 1970")
@@ -39,8 +39,8 @@ class NSDateExtensionTest: XCTestCase {
     }
 
     func testAfter() {
-        let date1 = NSDate(timeIntervalSince1970: 0)
-        let date2 = NSDate(timeIntervalSince1970: 1)
+        let date1 = Date(timeIntervalSince1970: 0)
+        let date2 = Date(timeIntervalSince1970: 1)
 
         XCTAssertTrue(date1.after(date: date1), "date1 is after itself")
         XCTAssertTrue(date2.after(date: date1), "date2 is after date1")
@@ -48,8 +48,8 @@ class NSDateExtensionTest: XCTestCase {
     }
 
     func testBefore() {
-        let date1 = NSDate(timeIntervalSince1970: 0)
-        let date2 = NSDate(timeIntervalSince1970: 1)
+        let date1 = Date(timeIntervalSince1970: 0)
+        let date2 = Date(timeIntervalSince1970: 1)
 
         XCTAssertTrue(date1.before(date: date2), "date1 is before date2")
         XCTAssertFalse(date1.before(date: date1), "date1 is not before itself")
@@ -57,11 +57,11 @@ class NSDateExtensionTest: XCTestCase {
     }
 
     func testDaysUntil() {
-        let date1 = NSDate(timeIntervalSince1970: 0)
-        let date2 = NSDate(timeIntervalSince1970: 30)
-        let date3 = NSDate(timeIntervalSince1970: 86400)
-        let date4 = NSDate(timeIntervalSince1970: 86401)
-        let date5 = NSDate(timeIntervalSince1970: 172800)
+        let date1 = Date(timeIntervalSince1970: 0)
+        let date2 = Date(timeIntervalSince1970: 30)
+        let date3 = Date(timeIntervalSince1970: 86400)
+        let date4 = Date(timeIntervalSince1970: 86401)
+        let date5 = Date(timeIntervalSince1970: 172800)
 
         XCTAssertEqual(0, date1.daysUntil(date1), "0 days between date1 and itself")
         XCTAssertEqual(0, date1.daysUntil(date2), "0 days between date1 and date2")
@@ -71,10 +71,10 @@ class NSDateExtensionTest: XCTestCase {
     }
 
     func testExtendedBy() {
-        let date1 = NSDate(timeIntervalSince1970: 0)
-        let date2 = NSDate(timeIntervalSince1970: 86400)
+        let date1 = Date(timeIntervalSince1970: 0)
+        let date2 = Date(timeIntervalSince1970: 86400)
 
-        let day = NSDateComponents()
+        var day = DateComponents()
         day.day = 1
 
         XCTAssertEqual(date2, date1.extended(by: day), "")

@@ -49,17 +49,17 @@ class NSStringTests: XCTestCase {
     }
 
     func testLevenshteinPerformance() {
-        self.measureBlock {
+        self.measure {
             for _ in 0...1000 {
-                "Performance Testing in Xcode 6".likenessTo("xcode")
+                _ = "Performance Testing in Xcode".likenessTo("xcode")
             }
         }
     }
 
     func testLevenshteinPerformanceMinLikeness() {
-        self.measureBlock {
+        self.measure {
             for _ in 0...1000 {
-                "Performance Testing in Xcode 6".likenessTo("xcode", minLikeness: 0.9)
+                _ = "Performance Testing in Xcode".likenessTo("xcode", minLikeness: 0.9)
             }
         }
     }

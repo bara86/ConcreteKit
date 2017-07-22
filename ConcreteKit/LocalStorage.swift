@@ -25,20 +25,20 @@
 import Foundation
 
 /// A global LocalStorageManager initialized with the defaults for the current user account/application.
-public var LocalStorage = LocalStorageManager(defaults: NSUserDefaults())
+public var LocalStorage = LocalStorageManager(defaults: UserDefaults())
 
 /// Provides map-like access to an NSUserDefaults.
 ///
 /// This class provides subscript access to an underlying NSUserDefaults instance in a manner
 /// similar to a regular map, except the data is persisted to disk, like a regular NSUserDefaults.
 public struct LocalStorageManager {
-    let defaults: NSUserDefaults!
+    let defaults: UserDefaults!
 
     /// Creates a new instance of a LocalStorageManager using the given NSUserDefaults as
     /// persistent storage.
     ///
     /// - parameter defaults: The NSUserDefaults instance to use as backing store.
-    public init(defaults: NSUserDefaults) {
+    public init(defaults: UserDefaults) {
         self.defaults = defaults
     }
 
@@ -47,54 +47,54 @@ public struct LocalStorageManager {
     /// Subscript notation to set/get a boolean value.
     public subscript(defaultName: String) -> Bool {
         get {
-            return defaults.boolForKey(defaultName)
+            return defaults.bool(forKey: defaultName)
         }
         set {
-            defaults.setBool(newValue, forKey: defaultName)
+            defaults.set(newValue, forKey: defaultName)
         }
     }
 
     /// Subscript notation to set/get a double precision floating point value.
     public subscript(defaultName: String) -> Double {
         get {
-            return defaults.doubleForKey(defaultName)
+            return defaults.double(forKey: defaultName)
         }
         set {
-            defaults.setDouble(newValue, forKey: defaultName)
+            defaults.set(newValue, forKey: defaultName)
         }
     }
 
     /// Subscript notation to set/get a floating point value.
     public subscript(defaultName: String) -> Float {
         get {
-            return defaults.floatForKey(defaultName)
+            return defaults.float(forKey: defaultName)
         }
         set {
-            defaults.setFloat(newValue, forKey: defaultName)
+            defaults.set(newValue, forKey: defaultName)
         }
     }
 
     /// Subscript notation to set/get an integer value.
     public subscript(defaultName: String) -> Int {
         get {
-            return defaults.integerForKey(defaultName)
+            return defaults.integer(forKey: defaultName)
         }
         set {
-            defaults.setInteger(newValue, forKey: defaultName)
+            defaults.set(newValue, forKey: defaultName)
         }
     }
 
     /// Subscript notation to set/get a string value.
     public subscript(defaultName: String) -> String {
         get {
-            if let ret = defaults.stringForKey(defaultName) {
+            if let ret = defaults.string(forKey: defaultName) {
                 return ret
             } else {
                 return ""
             }
         }
         set {
-            defaults.setObject(newValue, forKey: defaultName)
+            defaults.set(newValue, forKey: defaultName)
         }
     }
 
@@ -111,11 +111,11 @@ public struct LocalStorageManager {
     ///
     /// - parameter sentinel: The key to use as sentinel value.
     /// - parameter f: The function to call.
-    public func once(sentinel: String, f: () -> ()) {
+    public func once(_ sentinel: String, f: () -> ()) {
         if !self[sentinel] {
             f()
 
-            defaults.setBool(true, forKey: sentinel)
+            defaults.set(true, forKey: sentinel)
         }
     }
 }
