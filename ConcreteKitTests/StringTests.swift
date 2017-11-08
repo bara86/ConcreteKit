@@ -25,7 +25,7 @@
 import Foundation
 import XCTest
 
-class NSStringTests: XCTestCase {
+class StringTests: XCTestCase {
     func testLength() {
         XCTAssertEqual(0, "".length)
         XCTAssertEqual(1, "h".length)

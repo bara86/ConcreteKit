@@ -14,9 +14,9 @@
 		BF10D14C1B12FF4800ED5247 /* BuildType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10D14B1B12FF4800ED5247 /* BuildType.swift */; };
 		BF10D14D1B12FF4800ED5247 /* BuildType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10D14B1B12FF4800ED5247 /* BuildType.swift */; };
 		BF10D1501B12FF6800ED5247 /* BuildTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10D14E1B12FF6800ED5247 /* BuildTypeTests.swift */; };
-		BF37917C1AC6CA2800EE4EEA /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917B1AC6CA2800EE4EEA /* NSDate.swift */; };
-		BF37917D1AC6CA2800EE4EEA /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917B1AC6CA2800EE4EEA /* NSDate.swift */; };
-		BF37917F1AC6CADA00EE4EEA /* NSDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */; };
+		BF37917C1AC6CA2800EE4EEA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917B1AC6CA2800EE4EEA /* Date.swift */; };
+		BF37917D1AC6CA2800EE4EEA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917B1AC6CA2800EE4EEA /* Date.swift */; };
+		BF37917F1AC6CADA00EE4EEA /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37917E1AC6CADA00EE4EEA /* DateTests.swift */; };
 		BF5FA7E91AD9210900A9085D /* ConcreteKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF066D381AC09C8E00CE0AB2 /* ConcreteKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF8124201B18520D0024DA22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF81241F1B18520D0024DA22 /* Foundation.framework */; };
 		BF8124221B1852140024DA22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8124211B1852140024DA22 /* UIKit.framework */; };
@@ -68,8 +68,8 @@
 		BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
 		BF10D14B1B12FF4800ED5247 /* BuildType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildType.swift; sourceTree = "<group>"; };
 		BF10D14E1B12FF6800ED5247 /* BuildTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildTypeTests.swift; sourceTree = "<group>"; };
-		BF37917B1AC6CA2800EE4EEA /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
-		BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateTests.swift; sourceTree = "<group>"; };
+		BF37917B1AC6CA2800EE4EEA /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		BF37917E1AC6CADA00EE4EEA /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		BF81241F1B18520D0024DA22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF8124211B1852140024DA22 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BF8124231B1852330024DA22 /* KeyboardUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardUtils.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 				BFE37C811AC60DBC00C32886 /* Int.swift */,
 				BF8124231B1852330024DA22 /* KeyboardUtils.swift */,
 				BF066D541AC09CB300CE0AB2 /* LocalStorage.swift */,
-				BF37917B1AC6CA2800EE4EEA /* NSDate.swift */,
+				BF37917B1AC6CA2800EE4EEA /* Date.swift */,
 				BFD184061AD1A658006226AE /* String.swift */,
 				BF8CB3541B42661C00984639 /* Timer.swift */,
 				BFE37C7C1AC6090400C32886 /* UIColor.swift */,
@@ -154,7 +154,7 @@
 			children = (
 				BF10D14E1B12FF6800ED5247 /* BuildTypeTests.swift */,
 				BF066D571AC09CC700CE0AB2 /* LocalStorageTests.swift */,
-				BF37917E1AC6CADA00EE4EEA /* NSDateTests.swift */,
+				BF37917E1AC6CADA00EE4EEA /* DateTests.swift */,
 				BFD184081AD1A674006226AE /* StringTests.swift */,
 				BF8CB3581B4273CE00984639 /* TimerTests.swift */,
 				BFE37C7F1AC6092C00C32886 /* UIColorTests.swift */,
@@ -288,7 +288,7 @@
 				BF066D551AC09CB300CE0AB2 /* LocalStorage.swift in Sources */,
 				BF10D14C1B12FF4800ED5247 /* BuildType.swift in Sources */,
 				BFD184071AD1A658006226AE /* String.swift in Sources */,
-				BF37917C1AC6CA2800EE4EEA /* NSDate.swift in Sources */,
+				BF37917C1AC6CA2800EE4EEA /* Date.swift in Sources */,
 				BF8CB3571B42702300984639 /* Double.swift in Sources */,
 				BFE37C7D1AC6090400C32886 /* UIColor.swift in Sources */,
 			);
@@ -303,13 +303,13 @@
 				BF10D1501B12FF6800ED5247 /* BuildTypeTests.swift in Sources */,
 				BFD184091AD1A674006226AE /* StringTests.swift in Sources */,
 				BF8CB35A1B42740A00984639 /* Timer.swift in Sources */,
-				BF37917F1AC6CADA00EE4EEA /* NSDateTests.swift in Sources */,
+				BF37917F1AC6CADA00EE4EEA /* DateTests.swift in Sources */,
 				BF8CB35B1B42741C00984639 /* Double.swift in Sources */,
 				BFE37C801AC6092C00C32886 /* UIColorTests.swift in Sources */,
 				BFD1840A1AD1ADD4006226AE /* String.swift in Sources */,
 				BFE37C831AC60DBC00C32886 /* Int.swift in Sources */,
 				BFE37C7E1AC6090400C32886 /* UIColor.swift in Sources */,
-				BF37917D1AC6CA2800EE4EEA /* NSDate.swift in Sources */,
+				BF37917D1AC6CA2800EE4EEA /* Date.swift in Sources */,
 				BF066D591AC09E1300CE0AB2 /* LocalStorage.swift in Sources */,
 				BF8CB3591B4273CE00984639 /* TimerTests.swift in Sources */,
 			);

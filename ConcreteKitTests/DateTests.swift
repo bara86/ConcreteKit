@@ -25,7 +25,7 @@
 import Foundation
 import XCTest
 
-class NSDateExtensionTest: XCTestCase {
+class DateExtensionTest: XCTestCase {
     func testComponents() {
         let date = Date(timeIntervalSince1970: 0)
         let components = date.components
