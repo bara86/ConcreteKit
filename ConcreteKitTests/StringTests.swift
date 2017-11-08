@@ -26,6 +26,12 @@ import Foundation
 import XCTest
 
 class NSStringTests: XCTestCase {
+    func testLength() {
+        XCTAssertEqual(0, "".length)
+        XCTAssertEqual(1, "h".length)
+        XCTAssertEqual(12, "hello world!".length)
+    }
+    
     func testLevenstheinDegenerate() {
         XCTAssertEqual(0, "".distanceTo(""), "Empty strings must have a distance of zero")
         XCTAssertEqual(0, "eq".distanceTo("eq"), "Equal strings must have a distance of zero")
