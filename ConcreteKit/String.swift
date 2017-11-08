@@ -27,7 +27,7 @@ import Foundation
 public extension String {
     /// Subscript notation to address a single character in the string.
     subscript (i: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: i)]
+        return self[self.index(self.startIndex, offsetBy: i)]
     }
 
     /// The length of this string, assuming it is encoded as UTF-8.
@@ -44,8 +44,8 @@ public extension String {
     /// - parameter minLikeness: The minimum acceptable likeness, in a range between 0.0 and 1.0.
     ///         Values outside the range are interpreted as 0.0.
     public func likenessTo(_ other: String, minLikeness: Float = 0.0) -> Float {
-        let countSelf = self.characters.count
-        let countOther = other.characters.count
+        let countSelf = self.count
+        let countOther = other.count
         let countMax = Float(max(countSelf, countOther))
         let distance: Int
 
@@ -68,8 +68,8 @@ public extension String {
     ///           value is eventually clamped to the value of ``maxDistance``.
     public func distanceTo(_ other: String, maxDistance: Int = 0) -> Int {
         // Minor optimization, let's avoid calling count() too many times.
-        let countSelf = self.characters.count
-        let countOther = other.characters.count
+        let countSelf = self.count
+        let countOther = other.count
 
         // If either string is of length zero, the distance is the length of the other string.
         if countSelf == 0 {
