@@ -63,4 +63,8 @@ class NSStringTests: XCTestCase {
             }
         }
     }
+    
+    func testSubscript() {
+        XCTAssertEqual("e", "hello world!"[1])
+    }
 }
