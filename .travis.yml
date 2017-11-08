@@ -1,4 +1,4 @@
 language: objective-c
-osx_image: xcode8.3
+osx_image: xcode9.1
 script:
-  - xcodebuild -scheme ConcreteKit -sdk iphonesimulator10.3 -destination "name=iPhone SE" test | xcpretty
+  - xcodebuild -scheme ConcreteKit -sdk iphonesimulator11.1 -destination "name=iPhone SE" test | xcpretty
