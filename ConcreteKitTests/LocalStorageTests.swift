@@ -34,6 +34,7 @@ class LocalStorageTest: XCTestCase {
         defaults.set(3.14, forKey: "test.float")
         defaults.set(123, forKey: "test.int")
         defaults.set("a string", forKey: "test.string")
+        defaults.set(createDate(), forKey: "test.date")
         defaults.synchronize()
     }
 
@@ -43,6 +44,7 @@ class LocalStorageTest: XCTestCase {
         XCTAssert(LocalStorage["test.float"] == 3.14 as Float, "test.float equals 3.14")
         XCTAssert(LocalStorage["test.int"] == 123, "test.int equals 123")
         XCTAssert(LocalStorage["test.string"] == "a string", "test.string equals \"a string\"")
+        XCTAssert(LocalStorage["test.date"] == createDate(), "test.date equals \(createDate())")
     }
 
     func testMissingDefaults() {
@@ -51,6 +53,7 @@ class LocalStorageTest: XCTestCase {
         XCTAssert(LocalStorage["test.missing.float"] == 0 as Float, "test.missing.float equals 3.14")
         XCTAssert(LocalStorage["test.missing.int"] == 0, "test.missing.int equals 123")
         XCTAssert(LocalStorage["test.missingstring"] == "", "test.missing.string equals \"a string\"")
+        XCTAssert(LocalStorage["test.missingdate"] == nil, "test.missingdate equals \"nil\"")
     }
 
     func testChangedDefaults() {
@@ -59,12 +62,14 @@ class LocalStorageTest: XCTestCase {
         LocalStorage["test.changed.float"] = 1024.0
         LocalStorage["test.changed.int"] = 2048
         LocalStorage["test.changed.string"] = "another value"
+        LocalStorage["test.changed.date"] = createDate(year: 2016)
 
         XCTAssert(LocalStorage["test.changed.bool"] == true, "test.changed.bool is true")
         XCTAssert(LocalStorage["test.changed.double"] == 512.0, "test.changed.double equals 512.0")
         XCTAssert(LocalStorage["test.changed.float"] == 1024.0 as Float, "test.changed.float equals 1024.0")
         XCTAssert(LocalStorage["test.changed.int"] == 2048, "test.changed.int equals 2048")
         XCTAssert(LocalStorage["test.changed.string"] == "another value", "test.changed.string equals \"another value\"")
+        XCTAssert(LocalStorage["test.changed.date"] == createDate(year: 2016), "test.changed.date equals \(createDate(year: 2016))")
     }
 
     func testOnce() {
@@ -91,5 +96,14 @@ class LocalStorageTest: XCTestCase {
         }
 
         XCTAssert(callCount == 1, "The function must be called at most once")
+    }
+
+    func createDate(year: Int = 2017) -> Date {
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = 12
+        dateComponents.day = 9
+
+        return Calendar.current.date(from: dateComponents)!
     }
 }

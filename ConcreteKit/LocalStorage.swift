@@ -98,6 +98,16 @@ public struct LocalStorageManager {
         }
     }
 
+    /// Subscript notation to set/get a Date value.
+    public subscript(defaultName: String) -> Date? {
+        get {
+            return defaults.object(forKey: defaultName) as? Date
+        }
+        set {
+            defaults.set(newValue, forKey: defaultName)
+        }
+    }
+
     // MARK: Utility
 
     /// Runs the given function block exactly once.
